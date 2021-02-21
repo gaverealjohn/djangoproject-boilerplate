@@ -13,18 +13,18 @@ class Command(BaseCommand):
         # Renaming the project
 
         files_to_rename = [
-            'theproject/settings/base.py',
-            'theproject/wsgi.py',
+            'djangoproject/settings/base.py',
+            'djangoproject/wsgi.py',
             'manage.py',
         ]
 
-        folder_to_rename = 'theproject'
+        folder_to_rename = 'djangoproject'
 
         for f in files_to_rename:
             with open(f, 'r') as file:
                 filedata = file.read()
 
-            filedata = filedata.replace('theproject', new_project_name)
+            filedata = filedata.replace('djangoproject', new_project_name)
 
             with open(f, 'w') as file:
                 file.write(filedata)
